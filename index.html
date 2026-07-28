@@ -58,31 +58,38 @@
   .hero {
     position: relative;
     overflow: hidden;
-    text-align: center;
-    padding: 64px 0 80px;
+    padding: 56px 0 72px;
     background:
       radial-gradient(1100px 600px at 82% 112%, rgba(8, 46, 77, 0.95), transparent 65%),
       radial-gradient(900px 500px at 8% -20%, rgba(8, 46, 77, 0.55), transparent 60%),
       var(--aiws-black);
   }
 
+  /* concentric rings sit behind the image column */
   .hero::before,
   .hero::after {
     content: "";
     position: absolute;
-    left: 50%;
-    top: 46%;
+    left: 74%;
+    top: 55%;
     transform: translate(-50%, -50%);
     border: 1px solid rgba(252, 250, 245, 0.06);
     border-radius: 50%;
     pointer-events: none;
   }
-  .hero::before { width: 720px; height: 720px; }
-  .hero::after { width: 1080px; height: 1080px; }
+  .hero::before { width: 640px; height: 640px; }
+  .hero::after { width: 960px; height: 960px; }
 
   .hero .container { position: relative; z-index: 1; }
 
-  .logo { height: 44px; width: auto; display: inline-block; margin-bottom: 40px; }
+  .logo { height: 44px; width: auto; display: inline-block; margin-bottom: 48px; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 56px;
+    align-items: center;
+  }
 
   .pre-head {
     display: block;
@@ -90,25 +97,23 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: clamp(16px, 2vw, 21px);
+    font-size: clamp(15px, 1.6vw, 19px);
     color: var(--aiws-purple);
     margin-bottom: 16px;
   }
 
   h1 {
-    font-size: clamp(30px, 4.4vw, 52px);
-    max-width: 820px;
-    margin: 0 auto 22px;
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 22px;
   }
 
   /* Sub-headline: Inter Display Semibold, line weight 140% */
   .hero-sub {
     font-weight: 600;
-    font-size: clamp(16px, 1.9vw, 20px);
+    font-size: clamp(16px, 1.7vw, 19px);
     line-height: 1.4;
     color: var(--text-dim);
-    max-width: 700px;
-    margin: 0 auto 40px;
+    margin: 0 0 36px;
   }
 
   .hero-sub strong { color: var(--aiws-white); }
@@ -322,29 +327,31 @@
     color: var(--text-dim);
   }
 
-  .hero-shelf {
-    max-width: 980px;
-    margin: 40px auto -36px;
-  }
+  .hero-shelf { position: relative; }
 
   .hero-shelf img {
     display: block;
-    width: 100%;
+    width: 118%;
+    max-width: none;
     height: auto;
+    margin-left: -4%;
     /* feather the edges so the artwork melts into the hero background */
-    -webkit-mask-image: radial-gradient(72% 92% at 50% 50%, #000 40%, transparent 82%);
-    mask-image: radial-gradient(72% 92% at 50% 50%, #000 40%, transparent 82%);
+    -webkit-mask-image: radial-gradient(68% 88% at 50% 50%, #000 38%, transparent 80%);
+    mask-image: radial-gradient(68% 88% at 50% 50%, #000 38%, transparent 80%);
   }
 
-  .hero-countdown { margin: 40px auto 0; }
+  .hero-countdown {
+    justify-content: flex-start;
+    margin: 36px 0 0;
+  }
 
   .hero-countdown .count-box {
     background: rgba(10, 10, 10, 0.5);
-    min-width: 84px;
-    padding: 14px 8px 11px;
+    min-width: 78px;
+    padding: 13px 8px 10px;
   }
 
-  .hero-countdown .num { font-size: 34px; }
+  .hero-countdown .num { font-size: 30px; }
 
   .countdown-expired {
     text-align: center;
@@ -587,6 +594,12 @@
   @media (max-width: 920px) {
     .benefits { grid-template-columns: repeat(2, 1fr); }
     .courses { grid-template-columns: repeat(2, 1fr); }
+
+    /* stack the hero: copy on top, image below */
+    .hero { text-align: center; }
+    .hero-grid { grid-template-columns: 1fr; gap: 8px; }
+    .hero-countdown { justify-content: center; }
+    .hero-shelf img { width: 112%; margin-left: -6%; }
   }
 
   @media (max-width: 620px) {
@@ -609,23 +622,27 @@
   <div class="container">
     <img class="logo" src="images/AIWS WHITE.svg" alt="AIWS — AI Writing Skool">
 
-    <span class="pre-head">Upgrade To Save $388/Year On AI Writing Skool</span>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="pre-head">Upgrade To Save $388/Year On AI Writing Skool</span>
 
-    <h1>Instantly Unlock Our Entire Digital Writing Fundamentals Course&nbsp;Library</h1>
+        <h1>Instantly Unlock Our Entire Digital Writing Fundamentals Course&nbsp;Library</h1>
 
-    <p class="hero-sub">Plus, when you lock in a full year of AIWS Premium before <strong>Sunday, August 2nd</strong>, you'll also get our <strong>AIWS Secret Files</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year for <strong>FREE</strong>.</p>
+        <p class="hero-sub">Plus, when you lock in a full year of AIWS Premium before <strong>Sunday, August 2nd</strong>, you'll also get our <strong>AIWS Secret Files</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year for <strong>FREE</strong>.</p>
 
-    <a class="btn" href="#checkout">Upgrade To Annual Premium</a>
+        <a class="btn" href="#checkout">Upgrade To Annual Premium</a>
 
-    <div class="countdown hero-countdown" aria-label="Time left until the bonus expires">
-      <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
-      <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
-      <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
-      <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
-    </div>
+        <div class="countdown hero-countdown" aria-label="Time left until the bonus expires">
+          <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
+          <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
+          <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
+          <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
+        </div>
+      </div>
 
-    <div class="hero-shelf">
-      <img src="images/fundamentals_bookshelf.png" alt="All 9 Digital Writing Fundamentals courses lined up on a shelf">
+      <div class="hero-shelf">
+        <img src="images/fundamentals_bookshelf.png" alt="All 9 Digital Writing Fundamentals courses lined up on a shelf">
+      </div>
     </div>
   </div>
 </header>
