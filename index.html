@@ -7,19 +7,21 @@
 <meta name="description" content="Upgrade to an AIWS Annual Premium Membership: save $388/year and instantly unlock all 9 Digital Writing Fundamentals mini-courses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script defer="defer" src="https://static.samcart.com/checkouts/sc-checkout.js"></script>
 <style>
+  /* AIWS brand palette — Mini Brand Guidelines 2026 */
   :root {
-    --navy-950: #02060f;
-    --navy-900: #050b1a;
-    --navy-800: #0a1428;
-    --navy-700: #101f3d;
-    --blue-600: #1d4ed8;
-    --blue-500: #2563eb;
-    --blue-400: #3b82f6;
-    --text: #f4f7fc;
-    --text-dim: #aab8d0;
+    --aiws-black: #0A0A0A;
+    --aiws-deep-blue: #082E4D;
+    --aiws-white: #FCFAF5;
+    --aiws-red: #E26B67;
+    --aiws-yellow: #F3EE66;
+    --aiws-green: #54AE97;
+    --aiws-purple: #708AF3;
+    --text-dim: rgba(252, 250, 245, 0.72);
+    --card-bg: rgba(252, 250, 245, 0.04);
+    --card-border: rgba(252, 250, 245, 0.12);
     --card-radius: 16px;
     --max-w: 1120px;
   }
@@ -29,18 +31,21 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--navy-950);
-    color: var(--text);
-    line-height: 1.6;
+    /* Body: Inter Display Regular, line weight 150% */
+    font-family: "Inter Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--aiws-black);
+    color: var(--aiws-white);
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, .display {
-    font-family: "Oswald", "Archivo", sans-serif;
+  /* Headlines: Oswald Bold, line weight 110%, letter spacing 2% */
+  h1, h2, h3 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.01em;
-    line-height: 1.12;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
   }
 
   .container {
@@ -56,9 +61,9 @@
     text-align: center;
     padding: 72px 0 88px;
     background:
-      radial-gradient(1000px 500px at 50% -10%, rgba(37, 99, 235, 0.35), transparent 65%),
-      radial-gradient(700px 400px at 50% 110%, rgba(29, 78, 216, 0.25), transparent 70%),
-      linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
+      radial-gradient(1100px 600px at 82% 112%, rgba(8, 46, 77, 0.95), transparent 65%),
+      radial-gradient(900px 500px at 8% -20%, rgba(8, 46, 77, 0.55), transparent 60%),
+      var(--aiws-black);
   }
 
   .hero::before,
@@ -68,7 +73,7 @@
     left: 50%;
     top: 46%;
     transform: translate(-50%, -50%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(252, 250, 245, 0.06);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -77,88 +82,49 @@
 
   .hero .container { position: relative; z-index: 1; }
 
-  .logo-badge {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 40px;
-  }
-
-  .logo-star {
-    font-size: 20px;
-    line-height: 1;
-    color: #fff;
-  }
-
-  .logo-word {
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 0.32em;
-    margin-right: -0.32em; /* balance tracking */
-    color: #fff;
-  }
-
-  .eyebrow {
-    display: inline-block;
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 13px;
-    color: #9db8ff;
-    background: rgba(59, 130, 246, 0.12);
-    border: 1px solid rgba(59, 130, 246, 0.35);
-    border-radius: 999px;
-    padding: 8px 18px;
-    margin-bottom: 28px;
-  }
+  .logo { height: 44px; width: auto; display: inline-block; margin-bottom: 44px; }
 
   h1 {
-    font-size: clamp(34px, 5.2vw, 62px);
-    font-weight: 700;
+    font-size: clamp(36px, 5.2vw, 62px);
     max-width: 980px;
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
   }
 
-  h1 .accent {
-    background: linear-gradient(90deg, #7db1ff 0%, #b48fff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  h1 .accent { color: var(--aiws-purple); }
 
+  /* Sub-headline: Inter Display Semibold, line weight 140% */
   .hero-sub {
+    font-weight: 600;
     font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.4;
     color: var(--text-dim);
     max-width: 720px;
-    margin: 0 auto 36px;
+    margin: 0 auto 40px;
   }
 
+  /* Buttons: Inter Display, pill-shaped per brand guidelines */
   .btn {
     display: inline-block;
-    font-family: "Oswald", sans-serif;
+    font-family: "Inter Display", "Inter", sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     font-size: 17px;
-    color: #fff;
+    line-height: 1.5;
+    color: var(--aiws-black);
     text-decoration: none;
-    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
-    border-radius: 12px;
-    padding: 18px 44px;
-    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.45);
+    background: var(--aiws-white);
+    border-radius: 999px;
+    padding: 16px 44px;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 32px rgba(8, 46, 77, 0.55);
   }
   .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 38px rgba(37, 99, 235, 0.6);
+    box-shadow: 0 12px 40px rgba(8, 46, 77, 0.75);
   }
 
   .btn-note {
     display: block;
-    margin-top: 14px;
+    margin-top: 16px;
     font-size: 14px;
     color: var(--text-dim);
   }
@@ -173,16 +139,15 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 13px;
-    color: #7da3f5;
+    color: var(--aiws-purple);
     text-align: center;
     margin-bottom: 14px;
   }
 
   h2 {
-    font-size: clamp(28px, 3.8vw, 44px);
-    font-weight: 700;
+    font-size: clamp(30px, 3.8vw, 44px);
     text-align: center;
-    max-width: 820px;
+    max-width: 860px;
     margin: 0 auto 48px;
   }
 
@@ -194,8 +159,8 @@
   }
 
   .benefit {
-    background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: var(--card-radius);
     padding: 36px 30px;
   }
@@ -209,13 +174,12 @@
     border-radius: 12px;
     font-size: 24px;
     margin-bottom: 20px;
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.35);
+    background: rgba(8, 46, 77, 0.6);
+    border: 1px solid rgba(112, 138, 243, 0.4);
   }
 
   .benefit h3 {
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 22px;
     margin-bottom: 12px;
   }
 
@@ -224,7 +188,7 @@
     font-size: 15.5px;
   }
 
-  .benefit strong { color: var(--text); font-weight: 600; }
+  .benefit strong { color: var(--aiws-white); font-weight: 600; }
 
   /* ============ PRICE COMPARE ============ */
   .price-strip {
@@ -237,8 +201,8 @@
   }
 
   .price-box {
-    background: var(--navy-800);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: var(--card-radius);
     padding: 26px 36px;
     text-align: center;
@@ -246,14 +210,15 @@
   }
 
   .price-box.featured {
-    border-color: rgba(59, 130, 246, 0.6);
+    border-color: rgba(112, 138, 243, 0.65);
     background:
-      radial-gradient(300px 160px at 50% 0%, rgba(37, 99, 235, 0.25), transparent 70%),
-      var(--navy-800);
+      radial-gradient(300px 160px at 50% 0%, rgba(8, 46, 77, 0.85), transparent 75%),
+      var(--card-bg);
   }
 
   .price-box .tag {
     font-family: "Oswald", sans-serif;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     font-size: 12px;
@@ -261,13 +226,13 @@
     margin-bottom: 8px;
   }
 
-  .price-box.featured .tag { color: #9db8ff; }
+  .price-box.featured .tag { color: var(--aiws-purple); }
 
   .price-box .amount {
     font-family: "Oswald", sans-serif;
     font-size: 40px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .price-box .amount small {
@@ -278,7 +243,7 @@
 
   .price-box .strike {
     text-decoration: line-through;
-    text-decoration-color: rgba(255, 82, 82, 0.85);
+    text-decoration-color: var(--aiws-red);
     text-decoration-thickness: 3px;
     color: var(--text-dim);
   }
@@ -297,8 +262,8 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 13px;
-    color: #052e16;
-    background: linear-gradient(90deg, #4ade80, #22d3ee);
+    color: var(--aiws-black);
+    background: var(--aiws-green);
     border-radius: 999px;
     padding: 6px 16px;
   }
@@ -306,10 +271,10 @@
   /* ============ INSIDE EACH COURSE ============ */
   .inside {
     background:
-      radial-gradient(800px 400px at 50% 0%, rgba(29, 78, 216, 0.18), transparent 70%),
-      var(--navy-900);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      radial-gradient(900px 500px at 50% 0%, rgba(8, 46, 77, 0.55), transparent 70%),
+      var(--aiws-black);
+    border-top: 1px solid rgba(252, 250, 245, 0.07);
+    border-bottom: 1px solid rgba(252, 250, 245, 0.07);
   }
 
   .inside-list {
@@ -323,8 +288,8 @@
     display: flex;
     gap: 18px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: 22px 26px;
     font-size: 17px;
@@ -339,8 +304,8 @@
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    color: #052e16;
-    background: linear-gradient(135deg, #4ade80, #22d3ee);
+    color: var(--aiws-black);
+    background: var(--aiws-green);
     margin-top: 2px;
   }
 
@@ -350,10 +315,11 @@
     text-align: center;
     margin-top: 34px;
     font-family: "Oswald", sans-serif;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: 16px;
-    color: #9db8ff;
+    color: var(--aiws-purple);
   }
 
   /* ============ COURSE GRID ============ */
@@ -364,48 +330,23 @@
   }
 
   .course {
-    position: relative;
     overflow: hidden;
     border-radius: var(--card-radius);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
     display: flex;
     flex-direction: column;
     transition: transform 0.18s ease, border-color 0.18s ease;
   }
   .course:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.22);
+    border-color: rgba(252, 250, 245, 0.3);
   }
 
-  .course-art {
-    position: relative;
-    padding: 30px 26px 26px;
-    min-height: 190px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background:
-      linear-gradient(200deg, rgba(2, 6, 15, 0.15) 0%, rgba(2, 6, 15, 0.92) 62%),
-      var(--art);
-  }
-
-  .course-num {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .course-art h3 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.15;
-    max-width: 240px;
+  .course img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .course-body {
@@ -416,28 +357,19 @@
     flex: 1;
   }
 
+  .course-body h3 { font-size: 21px; }
+
   .course-body p {
     color: var(--text-dim);
     font-size: 15.5px;
   }
 
-  /* course gradients — matched to the DWF suite covers */
-  .c1 { --art: linear-gradient(135deg, #ff2d78 0%, #ff5f3d 55%, #ff8a00 100%); }
-  .c2 { --art: linear-gradient(135deg, #ff6a00 0%, #ff3d2e 60%, #d81b60 100%); }
-  .c3 { --art: linear-gradient(135deg, #a3e635 0%, #22c55e 55%, #0ea5a4 100%); }
-  .c4 { --art: linear-gradient(135deg, #38bdf8 0%, #34d399 55%, #a3e635 100%); }
-  .c5 { --art: linear-gradient(135deg, #a855f7 0%, #7c3aed 55%, #4f46e5 100%); }
-  .c6 { --art: linear-gradient(135deg, #10b981 0%, #059669 55%, #064e3b 100%); }
-  .c7 { --art: linear-gradient(135deg, #facc15 0%, #fb923c 45%, #ec4899 100%); }
-  .c8 { --art: linear-gradient(135deg, #fb923c 0%, #ef4444 55%, #b91c1c 100%); }
-  .c9 { --art: linear-gradient(135deg, #ef4444 0%, #ec4899 55%, #a21caf 100%); }
-
   /* ============ STANDARD INCLUDES ============ */
   .standard {
     background:
-      radial-gradient(900px 450px at 50% 100%, rgba(29, 78, 216, 0.18), transparent 70%),
-      var(--navy-900);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+      radial-gradient(1000px 550px at 50% 100%, rgba(8, 46, 77, 0.55), transparent 70%),
+      var(--aiws-black);
+    border-top: 1px solid rgba(252, 250, 245, 0.07);
   }
 
   .standard-list {
@@ -451,8 +383,8 @@
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: 26px 30px;
   }
@@ -466,13 +398,12 @@
     align-items: center;
     justify-content: center;
     font-size: 21px;
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.35);
+    background: rgba(8, 46, 77, 0.6);
+    border: 1px solid rgba(112, 138, 243, 0.4);
   }
 
   .standard-item h3 {
     font-size: 19px;
-    font-weight: 600;
     margin-bottom: 6px;
   }
 
@@ -485,17 +416,17 @@
   .checkout {
     text-align: center;
     background:
-      radial-gradient(800px 400px at 50% 0%, rgba(37, 99, 235, 0.25), transparent 70%),
-      var(--navy-950);
+      radial-gradient(900px 500px at 50% 0%, rgba(8, 46, 77, 0.7), transparent 70%),
+      var(--aiws-black);
   }
 
   .checkout-box {
     max-width: 760px;
     margin: 0 auto;
-    background: #ffffff;
+    background: var(--aiws-white);
     border-radius: 18px;
     padding: 18px;
-    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 20px 60px rgba(8, 46, 77, 0.6);
   }
 
   .checkout .recap {
@@ -505,22 +436,23 @@
     font-size: 17px;
   }
 
-  .checkout .recap strong { color: var(--text); }
+  .checkout .recap strong { color: var(--aiws-white); }
 
   /* ============ FOOTER ============ */
   footer {
     text-align: center;
     padding: 44px 24px 56px;
-    color: #5f6f8f;
+    color: rgba(252, 250, 245, 0.45);
     font-size: 13.5px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(252, 250, 245, 0.07);
   }
 
-  footer .logo-word { font-size: 18px; color: #8fa2c4; }
+  footer .logo { height: 26px; margin-bottom: 12px; }
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 920px) {
-    .benefits, .courses { grid-template-columns: repeat(2, 1fr); }
+    .benefits { grid-template-columns: repeat(2, 1fr); }
+    .courses { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 620px) {
@@ -538,12 +470,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="container">
-    <div class="logo-badge">
-      <span class="logo-star">✦</span>
-      <span class="logo-word">AIWS</span>
-    </div>
-
-    <span class="eyebrow">Exclusive Member Upgrade</span>
+    <img class="logo" src="images/AIWS WHITE.svg" alt="AIWS — AI Writing Skool">
 
     <h1>Upgrade To Save <span class="accent">$388/Year</span> On AI Writing Skool &amp; Instantly Unlock Our Entire Digital&nbsp;Writing Fundamentals Course&nbsp;Library</h1>
 
@@ -629,91 +556,73 @@
 
     <div class="courses">
       <div class="course">
-        <div class="course-art c1">
-          <span class="course-num">01</span>
-          <h3>Digital Mindset Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_1.jpg" alt="Digital Mindset Fundamentals — course 01" loading="lazy">
         <div class="course-body">
+          <h3>Digital Mindset Fundamentals</h3>
           <p>Timeless frameworks for "what it takes" to be successful building online.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c2">
-          <span class="course-num">02</span>
-          <h3>Digital Niche Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_2.jpg" alt="Digital Niche Fundamentals — course 02" loading="lazy">
         <div class="course-body">
+          <h3>Digital Niche Fundamentals</h3>
           <p>You aren't picking your "forever niche." You're picking your first niche.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c3">
-          <span class="course-num">03</span>
-          <h3>Digital Writing Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_3.jpg" alt="Digital Writing Fundamentals — course 03" loading="lazy">
         <div class="course-body">
+          <h3>Digital Writing Fundamentals</h3>
           <p>Nicolas Cole's 10 most powerful frameworks for writing quickly &amp; effectively.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c4">
-          <span class="course-num">04</span>
-          <h3>Digital Newsletter Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_4.jpg" alt="Digital Newsletter Fundamentals — course 04" loading="lazy">
         <div class="course-body">
+          <h3>Digital Newsletter Fundamentals</h3>
           <p>How to move your rented audience to an owned email list.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c5">
-          <span class="course-num">05</span>
-          <h3>AI Prompting Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_5.jpg" alt="AI Prompting Fundamentals — course 05" loading="lazy">
         <div class="course-body">
+          <h3>AI Prompting Fundamentals</h3>
           <p>How to unbundle tasks into repeatable prompts &amp; systems.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c6">
-          <span class="course-num">06</span>
-          <h3>Digital Marketing Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_6.jpg" alt="Digital Marketing Fundamentals — course 06" loading="lazy">
         <div class="course-body">
+          <h3>Digital Marketing Fundamentals</h3>
           <p>The art of communicating value and incentivizing customers to take action.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c7">
-          <span class="course-num">07</span>
-          <h3>Digital Products Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_7.jpg" alt="Digital Products Fundamentals — course 07" loading="lazy">
         <div class="course-body">
+          <h3>Digital Products Fundamentals</h3>
           <p>How to package &amp; price "information" as a product.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c8">
-          <span class="course-num">08</span>
-          <h3>Digital Services Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_8.jpg" alt="Digital Services Fundamentals — course 08" loading="lazy">
         <div class="course-body">
+          <h3>Digital Services Fundamentals</h3>
           <p>The fastest path to monetizing your skills as a writer is to "rent" them as a service.</p>
         </div>
       </div>
 
       <div class="course">
-        <div class="course-art c9">
-          <span class="course-num">09</span>
-          <h3>Digital Monetization Fundamentals</h3>
-        </div>
+        <img src="images/fundamental_9.jpg" alt="Digital Monetization Fundamentals — course 09" loading="lazy">
         <div class="course-body">
+          <h3>Digital Monetization Fundamentals</h3>
           <p>The best way to start to monetize your skills—and what to do next.</p>
         </div>
       </div>
@@ -793,8 +702,8 @@
 </section>
 
 <footer>
-  <span class="logo-word">AIWS</span>
-  <p style="margin-top: 10px;">AI Writing Skool · Write Online, Make Money</p>
+  <img class="logo" src="images/AIWS WHITE.svg" alt="AIWS">
+  <p>AI Writing Skool · Write Online, Make Money</p>
 </footer>
 
 </body>
