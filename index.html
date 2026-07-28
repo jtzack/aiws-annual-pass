@@ -91,22 +91,23 @@
     align-items: start;
   }
 
-  .pre-head-line { white-space: nowrap; }
-
-  .pre-head {
-    display: block;
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: clamp(15px, 1.6vw, 19px);
-    color: var(--aiws-purple);
-    margin-bottom: 16px;
-  }
-
   h1 {
     font-size: clamp(30px, 3.6vw, 46px);
-    margin: 0 0 22px;
+    margin: 0 0 18px;
+  }
+
+  h1 .accent { color: var(--aiws-purple); }
+
+  /* quieter secondary headline under the h1 */
+  .whisper {
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    font-size: clamp(16px, 1.7vw, 21px);
+    color: var(--text-dim);
+    margin: 0 0 20px;
   }
 
   /* Sub-headline: Inter Display Semibold, line weight 140% */
@@ -332,7 +333,7 @@
   .hero-shelf {
     position: relative;
     /* top of the books lines up with the top of the headline */
-    margin-top: 42px;
+    margin-top: -31px;
   }
 
   .hero-shelf img {
@@ -612,8 +613,6 @@
   @media (max-width: 620px) {
     section { padding: 56px 0; }
     .hero { padding: 48px 0 60px; }
-    /* keep "On AI Writing Skool" together on its own line */
-    .pre-head-line { display: block; }
     .benefits, .courses { grid-template-columns: 1fr; }
     .price-strip { flex-direction: column; align-items: stretch; }
     .inside-item, .standard-item, .bonus-item { padding: 20px; }
@@ -633,11 +632,11 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="pre-head">Upgrade To Save $388/Year <span class="pre-head-line">On AI Writing Skool</span></span>
+        <h1>Save <span class="accent">$388/Year</span> On Your AI Writing Skool Membership</h1>
 
-        <h1>Instantly Unlock Our Entire Digital Writing Fundamentals Course&nbsp;Library</h1>
+        <span class="whisper">(And Get Instant Access To 9 Bonus Mini Courses To Build A Thriving 1-Person Writing Business)</span>
 
-        <p class="hero-sub">Lock in a full year of AIWS Premium before <strong>Sunday, August 2nd</strong>, and get 9 mini-courses to help you build your digital writing business in 2026. Plus, get our <strong>AIWS Secret Files</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year for <strong>FREE</strong>.</p>
+        <p class="hero-sub">Plus, join before <strong>Aug 2nd</strong> and get our <strong>AIWS Secret Files</strong> for <strong>FREE</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year</p>
 
         <a class="btn" href="#checkout">Upgrade To Annual Premium</a>
 
