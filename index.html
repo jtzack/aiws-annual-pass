@@ -322,6 +322,20 @@
     color: var(--text-dim);
   }
 
+  .hero-shelf {
+    max-width: 980px;
+    margin: 40px auto -36px;
+  }
+
+  .hero-shelf img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* feather the edges so the artwork melts into the hero background */
+    -webkit-mask-image: radial-gradient(72% 92% at 50% 50%, #000 40%, transparent 82%);
+    mask-image: radial-gradient(72% 92% at 50% 50%, #000 40%, transparent 82%);
+  }
+
   .hero-countdown { margin: 40px auto 0; }
 
   .hero-countdown .count-box {
@@ -608,6 +622,10 @@
       <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
       <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
       <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
+    </div>
+
+    <div class="hero-shelf">
+      <img src="images/fundamentals_bookshelf.png" alt="All 9 Digital Writing Fundamentals courses lined up on a shelf">
     </div>
   </div>
 </header>
