@@ -322,6 +322,16 @@
     color: var(--text-dim);
   }
 
+  .hero-countdown { margin: 40px auto 0; }
+
+  .hero-countdown .count-box {
+    background: rgba(10, 10, 10, 0.5);
+    min-width: 84px;
+    padding: 14px 8px 11px;
+  }
+
+  .hero-countdown .num { font-size: 34px; }
+
   .countdown-expired {
     text-align: center;
     font-family: "Oswald", sans-serif;
@@ -589,9 +599,16 @@
 
     <h1>Instantly Unlock Our Entire Digital Writing Fundamentals Course&nbsp;Library</h1>
 
-    <p class="hero-sub">Lock in a full year of AIWS Premium and unlock all 9 brand-new Digital Writing Fundamentals mini-courses—instantly. Plus, upgrade before <strong>Sunday, August 2nd</strong> and you'll get our <strong>AIWS Secret Files</strong>—the exact swipe files &amp; AI prompts behind our most profitable campaigns of the past year—free.</p>
+    <p class="hero-sub">Plus, when you lock in a full year of AIWS Premium before <strong>Sunday, August 2nd</strong>, you'll also get our <strong>AIWS Secret Files</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year for <strong>FREE</strong>.</p>
 
     <a class="btn" href="#checkout">Upgrade To Annual Premium</a>
+
+    <div class="countdown hero-countdown" aria-label="Time left until the bonus expires">
+      <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
+      <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
+      <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
+      <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
+    </div>
   </div>
 </header>
 
@@ -643,11 +660,11 @@
     <span class="section-label">🎁 Expiring Bonus</span>
     <h2>Upgrade Before Sunday, August 2nd At Midnight &amp; Get FREE Access To Our AIWS Secret Files</h2>
 
-    <div class="countdown" id="countdown" aria-label="Time left until the bonus expires">
-      <div class="count-box"><span class="num" id="cd-days">--</span><span class="unit">Days</span></div>
-      <div class="count-box"><span class="num" id="cd-hours">--</span><span class="unit">Hours</span></div>
-      <div class="count-box"><span class="num" id="cd-mins">--</span><span class="unit">Minutes</span></div>
-      <div class="count-box"><span class="num" id="cd-secs">--</span><span class="unit">Seconds</span></div>
+    <div class="countdown" aria-label="Time left until the bonus expires">
+      <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
+      <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
+      <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
+      <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
     </div>
 
     <div class="bonus-copy">
@@ -866,13 +883,7 @@
   // midnight at the end of Sunday, August 2nd, 2026 (Eastern Time)
   (function () {
     var DEADLINE = new Date('2026-08-03T00:00:00-04:00').getTime();
-    var el = {
-      wrap: document.getElementById('countdown'),
-      days: document.getElementById('cd-days'),
-      hours: document.getElementById('cd-hours'),
-      mins: document.getElementById('cd-mins'),
-      secs: document.getElementById('cd-secs')
-    };
+    var wraps = Array.prototype.slice.call(document.querySelectorAll('.countdown'));
 
     function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
@@ -880,17 +891,25 @@
       var diff = DEADLINE - Date.now();
       if (diff <= 0) {
         clearInterval(timer);
-        var expired = document.createElement('p');
-        expired.className = 'countdown-expired';
-        expired.textContent = 'This bonus has expired.';
-        el.wrap.replaceWith(expired);
+        wraps.forEach(function (wrap) {
+          var expired = document.createElement('p');
+          expired.className = 'countdown-expired';
+          expired.textContent = 'This bonus has expired.';
+          wrap.replaceWith(expired);
+        });
         return;
       }
       var s = Math.floor(diff / 1000);
-      el.days.textContent = pad(Math.floor(s / 86400));
-      el.hours.textContent = pad(Math.floor(s % 86400 / 3600));
-      el.mins.textContent = pad(Math.floor(s % 3600 / 60));
-      el.secs.textContent = pad(s % 60);
+      var d = pad(Math.floor(s / 86400));
+      var h = pad(Math.floor(s % 86400 / 3600));
+      var m = pad(Math.floor(s % 3600 / 60));
+      var sec = pad(s % 60);
+      wraps.forEach(function (wrap) {
+        wrap.querySelector('[data-cd-days]').textContent = d;
+        wrap.querySelector('[data-cd-hours]').textContent = h;
+        wrap.querySelector('[data-cd-mins]').textContent = m;
+        wrap.querySelector('[data-cd-secs]').textContent = sec;
+      });
     }
 
     var timer = setInterval(tick, 1000);
