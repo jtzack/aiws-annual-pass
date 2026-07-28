@@ -88,7 +88,7 @@
     display: grid;
     grid-template-columns: 1.02fr 0.98fr;
     gap: 56px;
-    align-items: center;
+    align-items: start;
   }
 
   .pre-head {
@@ -327,7 +327,11 @@
     color: var(--text-dim);
   }
 
-  .hero-shelf { position: relative; }
+  .hero-shelf {
+    position: relative;
+    /* top of the books lines up with the top of the headline */
+    margin-top: 42px;
+  }
 
   .hero-shelf img {
     display: block;
@@ -599,6 +603,7 @@
     .hero { text-align: center; }
     .hero-grid { grid-template-columns: 1fr; gap: 8px; }
     .hero-countdown { justify-content: center; }
+    .hero-shelf { margin-top: 0; }
     .hero-shelf img { width: 112%; margin-left: -6%; }
   }
 
