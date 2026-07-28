@@ -92,11 +92,23 @@
   }
 
   h1 {
-    font-size: clamp(26px, 2.9vw, 38px);
-    margin: 0 0 20px;
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 18px;
   }
 
   h1 .accent { color: var(--aiws-purple); }
+
+  /* quieter secondary headline under the h1 */
+  .whisper {
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    font-size: clamp(16px, 1.7vw, 21px);
+    color: var(--text-dim);
+    margin: 0 0 20px;
+  }
 
   /* Sub-headline: Inter Display Semibold, line weight 140% */
   .hero-sub {
@@ -620,7 +632,9 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1>Save <span class="accent">$388/Year</span> On Your AI Writing Skool Membership And Get Instant Access To <span class="accent">9 Bonus Mini Courses</span> To Build A Thriving 1-Person Writing Business</h1>
+        <h1>Save <span class="accent">$388/Year</span> On Your AI Writing Skool Membership</h1>
+
+        <span class="whisper">(And Get Instant Access To 9 Bonus Mini Courses To Build A Thriving 1-Person Writing Business)</span>
 
         <p class="hero-sub">Plus, join before <strong>Aug 2nd</strong> and get our <strong>AIWS Secret Files</strong> for <strong>FREE</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year</p>
 
