@@ -280,7 +280,7 @@
     padding: 6px 16px;
   }
 
-  /* ============ EXPIRING BONUS ============ */
+  /* ============ LIMITED OFFER ============ */
   .bonus {
     background:
       radial-gradient(1000px 550px at 50% -10%, rgba(8, 46, 77, 0.65), transparent 70%),
@@ -292,43 +292,6 @@
   .bonus .section-label { color: var(--aiws-yellow); }
 
   .bonus h2 { margin-bottom: 28px; }
-
-  .countdown {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin: 0 auto 44px;
-  }
-
-  .count-box {
-    background: var(--card-bg);
-    border: 1px solid rgba(243, 238, 102, 0.35);
-    border-radius: 14px;
-    padding: 16px 10px 12px;
-    min-width: 92px;
-    text-align: center;
-  }
-
-  .count-box .num {
-    display: block;
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 1;
-    color: var(--aiws-yellow);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .count-box .unit {
-    display: block;
-    margin-top: 8px;
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 11px;
-    color: var(--text-dim);
-  }
 
   .hero-shelf {
     position: relative;
@@ -345,30 +308,6 @@
     /* feather the edges so the artwork melts into the hero background */
     -webkit-mask-image: radial-gradient(68% 88% at 50% 50%, #000 38%, transparent 80%);
     mask-image: radial-gradient(68% 88% at 50% 50%, #000 38%, transparent 80%);
-  }
-
-  .hero-countdown {
-    justify-content: flex-start;
-    margin: 36px 0 0;
-  }
-
-  .hero-countdown .count-box {
-    background: rgba(10, 10, 10, 0.5);
-    min-width: 78px;
-    padding: 13px 8px 10px;
-  }
-
-  .hero-countdown .num { font-size: 30px; }
-
-  .countdown-expired {
-    text-align: center;
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 20px;
-    color: var(--aiws-red);
-    margin: 0 auto 44px;
   }
 
   .bonus-copy {
@@ -605,7 +544,6 @@
     /* stack the hero: copy on top, image below */
     .hero { text-align: center; }
     .hero-grid { grid-template-columns: 1fr; gap: 8px; }
-    .hero-countdown { justify-content: center; }
     .hero-shelf { margin-top: 0; }
     .hero-shelf img { width: 112%; margin-left: -6%; }
   }
@@ -617,9 +555,6 @@
     .price-strip { flex-direction: column; align-items: stretch; }
     .inside-item, .standard-item, .bonus-item { padding: 20px; }
     .checkout-box { padding: 10px; }
-    .countdown { gap: 8px; }
-    .count-box { min-width: 72px; padding: 12px 6px 10px; }
-    .count-box .num { font-size: 30px; }
   }
 </style>
 </head>
@@ -636,16 +571,9 @@
 
         <span class="whisper">(And Save $388/Year On Your AI Writing Skool Membership)</span>
 
-        <p class="hero-sub">Plus, join before <strong>July 31st</strong> and get our <strong>AIWS Secret Files</strong> for <strong>FREE</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year</p>
+        <p class="hero-sub">Plus, upgrade now and get our <strong>AIWS Secret Files</strong> for <strong>FREE</strong>—the emails, lead magnets, and AI prompts behind our most profitable campaigns of the past year</p>
 
         <a class="btn" href="#checkout">Upgrade To AIWS Annual</a>
-
-        <div class="countdown hero-countdown" aria-label="Time left until the bonus expires">
-          <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
-          <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
-          <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
-          <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
-        </div>
       </div>
 
       <div class="hero-shelf">
@@ -697,18 +625,11 @@
   </div>
 </section>
 
-<!-- ============ EXPIRING BONUS ============ -->
+<!-- ============ LIMITED OFFER ============ -->
 <section class="bonus" id="bonus">
   <div class="container">
-    <span class="section-label">🎁 Expiring Bonus</span>
-    <h2>Upgrade Before Friday, July 31st At Midnight &amp; Get FREE Access To Our AIWS Secret Files</h2>
-
-    <div class="countdown" aria-label="Time left until the bonus expires">
-      <div class="count-box"><span class="num" data-cd-days>--</span><span class="unit">Days</span></div>
-      <div class="count-box"><span class="num" data-cd-hours>--</span><span class="unit">Hours</span></div>
-      <div class="count-box"><span class="num" data-cd-mins>--</span><span class="unit">Minutes</span></div>
-      <div class="count-box"><span class="num" data-cd-secs>--</span><span class="unit">Seconds</span></div>
-    </div>
+    <span class="section-label">⏰ Limited Offer</span>
+    <h2>Upgrade Now &amp; Get FREE Access To Our AIWS Secret File</h2>
 
     <div class="bonus-copy">
       <p>Over the past 12 months, we've tested a LOT of marketing campaigns.</p>
@@ -908,7 +829,7 @@
   <div class="container">
     <span class="section-label">Ready To Upgrade?</span>
     <h2>Lock In Your AIWS Annual Membership</h2>
-    <p class="recap">One payment of <strong>$800</strong> gets you a full year of AIWS—that's just <strong>$66/month</strong>, a savings of <strong>$388/year</strong>—plus priority Hot Seat access and all 9 Digital Writing Fundamentals mini-courses, instantly unlocked. Upgrade before <strong>Friday, July 31st at midnight</strong> and the <strong>AIWS Secret Files</strong> are yours free, too.</p>
+    <p class="recap">One payment of <strong>$800</strong> gets you a full year of AIWS—that's just <strong>$66/month</strong>, a savings of <strong>$388/year</strong>—plus priority Hot Seat access and all 9 Digital Writing Fundamentals mini-courses, instantly unlocked. Upgrade now and the <strong>AIWS Secret Files</strong> are yours free, too.</p>
 
     <div class="checkout-box">
       <sc-checkout product="aiws-annual" subdomain="ship" coupon=""></sc-checkout>
@@ -920,45 +841,6 @@
   <img class="logo" src="images/AIWS WHITE.svg" alt="AIWS">
   <p>AI Writing Skool · Write Online, Make Money</p>
 </footer>
-
-<script>
-  // Countdown to the expiring bonus deadline:
-  // midnight at the end of Friday, July 31st, 2026 (Eastern Time)
-  (function () {
-    var DEADLINE = new Date('2026-08-01T00:00:00-04:00').getTime();
-    var wraps = Array.prototype.slice.call(document.querySelectorAll('.countdown'));
-
-    function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-    function tick() {
-      var diff = DEADLINE - Date.now();
-      if (diff <= 0) {
-        clearInterval(timer);
-        wraps.forEach(function (wrap) {
-          var expired = document.createElement('p');
-          expired.className = 'countdown-expired';
-          expired.textContent = 'This bonus has expired.';
-          wrap.replaceWith(expired);
-        });
-        return;
-      }
-      var s = Math.floor(diff / 1000);
-      var d = pad(Math.floor(s / 86400));
-      var h = pad(Math.floor(s % 86400 / 3600));
-      var m = pad(Math.floor(s % 3600 / 60));
-      var sec = pad(s % 60);
-      wraps.forEach(function (wrap) {
-        wrap.querySelector('[data-cd-days]').textContent = d;
-        wrap.querySelector('[data-cd-hours]').textContent = h;
-        wrap.querySelector('[data-cd-mins]').textContent = m;
-        wrap.querySelector('[data-cd-secs]').textContent = sec;
-      });
-    }
-
-    var timer = setInterval(tick, 1000);
-    tick();
-  })();
-</script>
 
 </body>
 </html>
